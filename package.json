@@ -6,6 +6,7 @@
   "main": "dist/bundle-generator.js",
   "typings": "dist/bundle-generator.d.ts",
   "bin": "dist/bin/dts-bundle-generator.js",
+  "type": "module",
   "files": [
     "config-schema.d.ts",
     "dist/**/*.d.ts",
@@ -21,8 +22,7 @@
     "yargs": "^17.6.0"
   },
   "devDependencies": {
-    "@types/mocha": "~10.0.0",
-    "@types/node": "~14.18.26",
+    "@types/node": "^25.3.5",
     "@types/yargs": "~17.0.13",
     "@typescript-eslint/eslint-plugin": "~7.4.0",
     "@typescript-eslint/parser": "~7.4.0",
@@ -30,9 +30,7 @@
     "eslint-plugin-deprecation": "~2.0.0",
     "eslint-plugin-import": "~2.29.0",
     "eslint-plugin-unicorn": "~51.0.1",
-    "mocha": "~10.4.0",
-    "ts-compiler": "npm:typescript@5.4.3",
-    "ts-node": "~10.9.1"
+    "ts-compiler": "npm:typescript@5.4.3"
   },
   "license": "MIT",
   "readme": "README.md",
@@ -51,6 +49,6 @@
     "tsc": "node ./node_modules/ts-compiler/bin/tsc --version && node ./node_modules/ts-compiler/bin/tsc -b ./tsconfig.json",
     "verify": "npm run clean && npm run tsc -p && npm run bundle-dts && npm run lint -s && npm run test",
     "prepare-release": "nrpm run clean && npm run tsc && npm run bundle-dts && node scripts/clean-package-json.js",
-    "test": "mocha --recursive -p --reporter list tests/"
+    "test": "node --test tests/**/*.spec.ts"
   }
 }

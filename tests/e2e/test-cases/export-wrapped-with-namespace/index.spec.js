@@ -1,1 +1,1 @@
-require('../run-test-case').runTestCase(__dirname);
+require('../run-test-case').runTestCase(import.meta.dirname);

@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 
 function main() {
-	const packageJsonPath = path.resolve(__dirname, '..', 'package.json');
+	const packageJsonPath = path.resolve(import.meta.dirname, '..', 'package.json');
 
 	const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, { encoding: 'utf-8' }));
 

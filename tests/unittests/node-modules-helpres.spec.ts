@@ -1,9 +1,10 @@
 import * as assert from 'assert';
+import { test as describe } from 'node:test';
 
-import { getTypesLibraryName, getLibraryName } from '../../src/helpers/node-modules';
+import { getTypesLibraryName, getLibraryName } from '../../src/helpers/node-modules.ts';
 
-describe('getLibraryName', () => {
-	it('should return correct library name', () => {
+describe('getLibraryName', t => {
+	t.test('should return correct library name', () => {
 		assert.strictEqual(getLibraryName('node_modules/typescript/index.js'), 'typescript');
 		assert.strictEqual(getLibraryName('./node_modules/typescript/index.js'), 'typescript');
 		assert.strictEqual(getLibraryName('./src/index.js'), null, 'Not node_modules folder');
@@ -13,8 +14,8 @@ describe('getLibraryName', () => {
 	});
 });
 
-describe('getTypesLibraryName', () => {
-	it('should return correct library types name', () => {
+describe('getTypesLibraryName', t => {
+	t.test('should return correct library types name', () => {
 		assert.strictEqual(getTypesLibraryName('node_modules/typescript/index.js'), null);
 		assert.strictEqual(getTypesLibraryName('./node_modules/typescript/index.js'), null);
 		assert.strictEqual(getTypesLibraryName('./src/index.js'), null, 'Not node_modules folder');

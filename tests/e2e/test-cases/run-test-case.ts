@@ -1,10 +1,11 @@
+import type { TestCaseConfig } from './test-case-config.ts';
+
 import * as fs from 'fs';
 import * as path from 'path';
 import * as assert from 'assert';
+import { test as it } from 'node:test';
 
-import { generateDtsBundle } from '../../../src/bundle-generator';
-
-import { TestCaseConfig } from './test-case-config';
+import { generateDtsBundle } from '../../../src/bundle-generator.ts';
 
 interface TestCase {
 	inputFileName: string;
@@ -13,7 +14,7 @@ interface TestCase {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-const currentPackageVersion = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../package.json'), { encoding: 'utf-8' })).version as string;
+const currentPackageVersion = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, '../../../package.json'), { encoding: 'utf-8' })).version as string;
 
 function prepareString(str: string): string {
 	return str.replace(/\r\n/g, '\n');
