@@ -12,11 +12,15 @@
     "dist/**/*.d.ts",
     "dist/**/*.js"
   ],
-  "author": "Evgeniy Timokhov",
+  "author": "Chronocide",
+  "contributors": [{
+    "name": "Evgeniy Timokhov",
+    "url": "https://github.com/timocov/dts-bundle-generator"
+  }],
   "bugs": {
-    "url": "https://github.com/timocov/dts-bundle-generator/issues"
+    "url": "https://github.com/chronoDave/dts-bundle-generator/issues"
   },
-  "homepage": "https://github.com/timocov/dts-bundle-generator",
+  "homepage": "https://github.com/chronoDave/dts-bundle-generator",
   "dependencies": {
     "typescript": ">=5.0.2",
     "yargs": "^17.6.0"
@@ -36,7 +40,7 @@
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timocov/dts-bundle-generator.git"
+    "url": "git+https://github.com/chronoDave/dts-bundle-generator.git"
   },
   "engines": {
     "node": ">=24.13.0"
